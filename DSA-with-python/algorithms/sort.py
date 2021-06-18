@@ -3,13 +3,13 @@ Time complexity: O(n**2)
 Space complexity: O(1)
 """
 
-def selection_sort(list):
-    for i in range(len(list) - 1):
+def selection_sort(arr):
+    for i in range(len(arr) - 1):
         min_item_index = i
-        for j in range(i + 1, len(list)):
-            if list[min_item_index] > list[j]:
+        for j in range(i + 1, len(arr)):
+            if arr[min_item_index] > arr[j]:
                 min_item_index = j
-        list[i], list[min_item_index] = list[min_item_index], list[i]
+        arr[i], arr[min_item_index] = arr[min_item_index], arr[i]
 
 
 """
@@ -38,20 +38,20 @@ Time complexity: O(n**2)
 Space complexity: O(1)
 """
 
-def insertion_sort(list):
-    for i in range(1, len(list)):
-        curr_val = list[i]
+def insertion_sort(arr):
+    for i in range(1, len(arr)):
+        curr_val = arr[i]
         j = i - 1
-        while j >= 0 and curr_val < list[j]:
-            list[j + 1] = list[j]
+        while j >= 0 and curr_val < arr[j]:
+            arr[j + 1] = arr[j]
             j -= 1
-        list[j + 1] = curr_val
+        arr[j + 1] = curr_val
 
-def merge_sort(list):
+def merge_sort(arr):
     pass
 
-def quick_sort(list):
+def quick_sort(arr):
     pass
 
-def heap_sort(list):
+def heap_sort(arr):
     pass
