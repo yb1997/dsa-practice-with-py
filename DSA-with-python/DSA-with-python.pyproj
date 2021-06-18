@@ -5,7 +5,7 @@
     <ProjectGuid>19ac791e-ff14-4e23-a773-0e937ebafdbe</ProjectGuid>
     <ProjectHome>
     </ProjectHome>
-    <StartupFile>tree-traversal.py</StartupFile>
+    <StartupFile>main.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,7 +22,28 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="algorithms\search.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="algorithms\sort.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="heap.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="main.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="module1.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="algorithms\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="tree-traversal.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="algorithms\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

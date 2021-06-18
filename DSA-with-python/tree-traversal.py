@@ -94,6 +94,50 @@ print("breadth first traverse")
 Utility.perform(TraverseTree.breadth_first)
 
 
+def heapify(arr, arrLen, parentIndex):
+    largestItemIndex = parentIndex
+    leftChildIndex = (2 * parentIndex) + 1
+    rightChildIndex = (2 * parentIndex) + 2
+
+    if leftChildIndex < arrLen and arr[leftChildIndex] > arr[parentIndex]:
+        arr[parentIndex], arr[leftChildIndex] = arr[leftChildIndex], arr[parentIndex]
+        largestItemIndex = leftChildIndex
+
+    if rightChildIndex < arrLen and arr[rightChildIndex] > arr[largestItemIndex]:
+        largestItemIndex = rightChildIndex
+
+    if largestItemIndex != parentIndex:
+        arr[largestItemIndex], arr[parentIndex] = arr[parentIndex], arr[largestItemIndex]
+        heapify(arr, arrLen, largestItemIndex)
+
+def insert(arr, arrLen, item):
+    arr.append(item)
+
+    for i in range((arrLen//2) - 1, -1, -1):
+        heapify(arr, arrLen, i)
+
+def remove(arr, arrLen, item):
+    pass
+
+def buildHeap(arr, arrLen):
+    for i in range((arrLen//2) - 1, -1, -1):
+        heapify(arr, arrLen, i)
+
+testArr = [1, 2, 3, 4, 5, 6, 7]
+
+#expected -> [7, 5, 6, 4, 2, 1, 3]
+
+buildHeap(testArr, len(testArr))
+print(testArr)
+
+
+
+
+
+
+
+
+
 
 
 
