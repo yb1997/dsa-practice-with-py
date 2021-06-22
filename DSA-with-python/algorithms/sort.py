@@ -47,8 +47,48 @@ def insertion_sort(arr):
             j -= 1
         arr[j + 1] = curr_val
 
+
+
+"""
+Time complexity: O(nlog(n))
+Space complexity: O(n)
+"""
+
 def merge_sort(arr):
-    pass
+    def merge(arr, start, mid, end):
+        i = j = 0
+        k = start
+        leftArr = arr[start:mid]
+        rightArr = arr[mid:end]
+
+        while i < len(leftArr) and j < len(rightArr):
+            if leftArr[i] <= rightArr[j]:
+                arr[k] = leftArr[i]
+                i += 1
+            else:
+                arr[k] = rightArr[j]
+                j += 1
+            k += 1
+
+        while i < len(leftArr):
+            arr[k] = leftArr[i]
+            i += 1
+            k += 1
+        
+        while j < len(rightArr):
+            arr[k] = rightArr[j]
+            j += 1
+            k += 1
+
+
+    def merge_sort_core(arr, start, end):
+        if  end - start > 1:
+            mid = start + ((end - start)//2)
+            merge_sort_core(arr, start, mid)
+            merge_sort_core(arr, mid, end)
+            merge(arr, start, mid, end)
+
+    merge_sort_core(arr, 0, len(arr))
 
 def quick_sort(arr):
     pass
